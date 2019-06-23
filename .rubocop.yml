@@ -1,0 +1,31 @@
+require: rubocop-rspec
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/MethodLength:
+  Max: 16
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Metrics/ParameterLists:
+  Max: 10
+
+Metrics/BlockLength:
+  Max: 40
+
+RSpec/ExampleLength:
+  Max: 25
+
+Metrics/BlockLength:
+  ExcludedMethods: ['describe']
+
+Metrics/AbcSize:
+  Max: 30
+
+RSpec/MessageSpies:
+  Enabled: false
