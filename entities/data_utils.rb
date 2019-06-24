@@ -1,11 +1,13 @@
 module DataUtils
   SEED = 'SEED.yaml'.freeze
 
-  def load(path = SEED)
+  def load(path)
+    path ||= SEED
     YAML.load_file(path)
   end
 
-  def save(summary, path = SEED)
+  def save(summary, path)
+    path ||= SEED
     row = TableRow.new(summary)
     if File.exist?(path)
       table = load(path)

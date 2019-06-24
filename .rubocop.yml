@@ -31,3 +31,5 @@ RSpec/MessageSpies:
 Metrics/CyclomaticComplexity:
   Max: 13
 
+RSpec/MultipleExpectations:
+  Max: 5

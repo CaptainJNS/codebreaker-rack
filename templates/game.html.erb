@@ -76,10 +76,12 @@
               </button>
               <a class="btn btn-warning btn-lg float-right" role="button" href = '/show_hint'>
                 Show hint!
-                <% @request.session[:hints].each do |hint| %>
-                <span class="badge badge-light">
-                  <%= hint %>
-                </span>
+                <% unless @request.session[:hints].nil? %>
+                  <% @request.session[:hints].each do |hint| %>
+                  <span class="badge badge-light">
+                    <%= hint %>
+                  </span>
+                  <% end %>
                 <% end %>
               </a>
             </form>

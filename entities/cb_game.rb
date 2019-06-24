@@ -13,7 +13,6 @@ class CBGame
   def response
     case @request.path
     when '/' then main
-    when '/secret' then Rack::Response.new(@request.session[:game].secret)
     when '/rules' then Rack::Response.new(render('rules.html.erb'))
     when '/statistics' then Rack::Response.new(render('statistics.html.erb'))
     when '/start' then start
@@ -44,6 +43,8 @@ class CBGame
   def start
     return redirect('game') if @request.session.key?(:game)
 
+    return redirect unless @request.params.key?('player_name')
+
     @request.session.delete(:result)
     @request.session[:hints] = []
     @request.session[:save] = false
@@ -71,12 +72,13 @@ class CBGame
   end
 
   def check
-    return redirect unless @request.session.key?(:game)
+    return redirect unless @request.params.key?('number')
 
     @request.session[:result] = @request.session[:game].check(@request.params['number'])
+
     if @request.session[:game].win
       save_results unless @request.session[:save]
-      return win
+      return redirect('win')
     end
 
     redirect('game')
@@ -107,7 +109,7 @@ class CBGame
     Rack::Response.new { |response| response.redirect("/#{address}") }
   end
 
-  def save_results
+  def save_results(path = nil)
     att_total = @request.session[:game].calc_attempts_and_hints(@request.session[:game].difficulty)[0]
     hints_total = @request.session[:game].calc_attempts_and_hints(@request.session[:game].difficulty)[1]
     summary = {
@@ -119,13 +121,13 @@ class CBGame
       hints_used: hints_total - @request.session[:game].hints,
       date: Time.now
     }
-    save(summary)
+    save(summary, path)
   end
 
-  def stats
+  def stats(path = nil)
     return [] unless File.exist?('SEED.yaml')
 
-    table = load.sort_by { |row| [row.hints_total, row.att_used] }
+    table = load(path).sort_by { |row| [row.hints_total, row.att_used] }
     table.map { |row| row.difficulty = GameLogic::DIFFICULTY_HASH.key([row.att_total, row.hints_total]) }
     table
   end
