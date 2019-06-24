@@ -42,9 +42,9 @@
                   <th scope="row"><%= index + 1 %></th>
                   <td><%= row.name %></td>
                   <td><%= row.difficulty %></td>
-                  <td><%= row.att_used %>/<%= row.att_total %></td>
-                  <td><%= row.hints_used %>/<%= row.hints_total %></td>
-                  <td><%= row.date.strftime("%Y.%M.%d - %H:%M:%S") %></td>
+                  <td><%= row.att_total - row.att_used %>/<%= row.att_total %></td>
+                  <td><%= row.hints_total - row.hints_used %>/<%= row.hints_total %></td>
+                  <td><%= row.date.strftime("%Y.%m.%d - %H:%M:%S") %></td>
                 </tr>              
               <% end %>
               </tbody>
