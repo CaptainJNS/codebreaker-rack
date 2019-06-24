@@ -13,6 +13,7 @@ class CBGame
   def response
     case @request.path
     when '/' then main
+    when '/secret' then Rack::Response.new(@request.session[:game].secret)
     when '/rules' then Rack::Response.new(render('rules.html.erb'))
     when '/statistics' then Rack::Response.new(render('statistics.html.erb'))
     when '/start' then start
