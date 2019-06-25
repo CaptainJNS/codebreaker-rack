@@ -6,8 +6,6 @@ RSpec.describe CBGame do
     Rack::Builder.parse_file('config.ru').first
   end
 
-  OVERRIDABLE_FILENAME = 'spec/stats.yml'.freeze
-
   let(:wrong_path) { '/wrong_way' }
   let(:urls) do
     { main: '/',
@@ -73,17 +71,9 @@ RSpec.describe CBGame do
       get urls[:stats]
       expect(last_response).to be_ok
     end
-
-    # it '' do
-
-    # end
   end
 
   context 'when start' do
-    before do
-      # env('rack.session', {})
-    end
-
     context 'when no name parameter' do
       it 'returns redirect' do
         get urls[:start]
