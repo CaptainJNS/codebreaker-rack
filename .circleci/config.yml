@@ -1,47 +1,28 @@
+
 version: 2
 jobs:
   build:
-    working_directory: ~/circle_ci_example
     docker:
-      - image: ruby:2.6.0
-        environment:
-          PG_HOST: localhost
-          PG_USER: ubuntu
-          RAILS_ENV: test
-      - image: postgres:9.6
-        environment:
-          POSTGRES_USER: ubuntu
-          POSTGRES_DB: circle_example_test
-
+      - image: circleci/ruby:2.6.3
+    
     steps:
       - checkout
 
       - restore_cache:
           keys:
-            - circle-ci-example-{{ checksum "Gemfile.lock" }}
-            - circle-ci-example-
+            - gem-cache-v1-{{ checksum "Gemfile.lock" }}
+            - gem-cache-v1-
 
       - run:
           name: Install dependencies
-          command: bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs 4 --retry 3
-
+          command: |
+            gem install bundler
+            bundle install --path vendor/bundle
       - save_cache:
-          key: rails-demo-{{ checksum "Gemfile.lock" }}
+          key: gem-cache-v1-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
 
-      # - run:
-      #     name: Preparing database config
-      #     command: cp db/config.yml.circle_ci db/config.yml
-
-      # - run:
-      #     name: Set up DB
-      #     command: bundle exec rake db:create db:schema:load --trace
-      # - run:
-      #     name: Migrate db
-      #     command: bundle exec rake db:migrate
-      #     environment:
-      #       DATABASE_URL: "postgres://ubuntu@localhost:5432/circle_example_test"
       - run:
           name: Run tests
-          command: bundle exec rspec --format documentation --color
+          command: bundle exec rspec
