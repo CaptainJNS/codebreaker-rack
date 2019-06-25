@@ -1,0 +1,25 @@
+---
+- !ruby/object:TableRow
+  name: Rspec
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 1
+  date: 2019-06-25 23:13:49.789400765 +03:00
+- !ruby/object:TableRow
+  name: Rspec
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 1
+  date: 2019-06-25 23:15:30.685223255 +03:00
+- !ruby/object:TableRow
+  name: Rspec
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 1
+  date: 2019-06-25 23:15:30.686250015 +03:00
