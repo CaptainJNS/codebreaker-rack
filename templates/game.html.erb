@@ -74,7 +74,7 @@
               <button type="submit" class="btn btn-primary btn-lg">
                 Submit
               </button>
-              <a class="btn btn-warning btn-lg float-right" role="button" href = '/show_hint'>
+              <a class="btn btn-warning btn-lg float-right <%= @request.session[:game].hints.positive? ? '' : 'disabled' %>" role="button" href = '/show_hint'>
                 Show hint!
                 <% unless @request.session[:hints].nil? %>
                   <% @request.session[:hints].each do |hint| %>
