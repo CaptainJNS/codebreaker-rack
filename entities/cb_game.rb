@@ -2,6 +2,8 @@ class CBGame
   include CodebreakerCaptainjns
   include DataUtils
 
+  TOTAL_SIGNS = 4
+
   def self.call(env)
     new(env).response.finish
   end
@@ -45,12 +47,7 @@ class CBGame
 
     return redirect unless @request.params.key?('player_name')
 
-    @request.session.delete(:result)
-    @request.session[:hints] = []
-    @request.session[:save] = false
-    name = @request.params['player_name']
-    difficulty = @request.params['level']
-    @request.session[:game] = Game.new(name: name, difficulty: difficulty)
+    start_initialize
     redirect('game')
   end
 
@@ -109,9 +106,8 @@ class CBGame
     Rack::Response.new { |response| response.redirect("/#{address}") }
   end
 
-  def save_results(path = nil)
-    att_total = @request.session[:game].calc_attempts_and_hints(@request.session[:game].difficulty)[0]
-    hints_total = @request.session[:game].calc_attempts_and_hints(@request.session[:game].difficulty)[1]
+  def save_results
+    att_total, hints_total = @request.session[:game].calc_attempts_and_hints(@request.session[:game].difficulty).first(2)
     summary = {
       name: @request.session[:game].name,
       difficulty: @request.session[:game].difficulty,
@@ -121,14 +117,23 @@ class CBGame
       hints_used: hints_total - @request.session[:game].hints,
       date: Time.now
     }
-    save(summary, path)
+    save(summary)
   end
 
-  def stats(path = nil)
+  def stats
     return [] unless File.exist?('SEED.yaml')
 
-    table = load(path).sort_by { |row| [row.hints_total, row.att_used] }
+    table = load.sort_by { |row| [row.hints_total, row.att_used] }
     table.map { |row| row.difficulty = GameLogic::DIFFICULTY_HASH.key([row.att_total, row.hints_total]) }
     table
+  end
+
+  def start_initialize
+    @request.session.delete(:result)
+    @request.session[:hints] = []
+    @request.session[:save] = false
+    name = @request.params['player_name']
+    difficulty = @request.params['level']
+    @request.session[:game] = Game.new(name: name, difficulty: difficulty)
   end
 end

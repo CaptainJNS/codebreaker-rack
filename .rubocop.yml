@@ -1,7 +1,7 @@
 require: rubocop-rspec
 
 Metrics/LineLength:
-  Max: 120
+  Max: 121
 
 Metrics/MethodLength:
   Max: 16

@@ -1,20 +1,16 @@
 module DataUtils
   SEED = 'SEED.yaml'.freeze
 
-  def load(path)
-    path ||= SEED
-    YAML.load_file(path)
+  def load
+    YAML.load_file(SEED)
   end
 
-  def save(summary, path)
-    path ||= SEED
+  def save(summary)
     row = TableRow.new(summary)
-    if File.exist?(path)
-      table = load(path)
-      table << row
-      File.write(path, table.to_yaml)
-    else
-      File.write(path, [row].to_yaml)
-    end
+    return File.write(SEED, [row].to_yaml) unless File.exist?(SEED)
+
+    table = load
+    table << row
+    File.write(SEED, table.to_yaml)
   end
 end

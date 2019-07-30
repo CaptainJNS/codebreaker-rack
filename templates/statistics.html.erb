@@ -39,7 +39,7 @@
               <tbody>
               <% stats.each_with_index do |row, index|%>              
                 <tr>
-                  <th scope="row"><%= index + 1 %></th>
+                  <th scope="row"><%= index.next %></th>
                   <td><%= row.name %></td>
                   <td><%= row.difficulty %></td>
                   <td><%= row.att_total - row.att_used %>/<%= row.att_total %></td>

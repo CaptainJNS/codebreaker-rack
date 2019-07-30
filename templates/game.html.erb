@@ -62,7 +62,7 @@
                     <% end %>
                   <% end %>
 
-                  <% (4 - @request.session[:result].chars.length).times do %>
+                  <% (TOTAL_SIGNS - @request.session[:result].chars.length).times do %>
                   <button type="button" class="btn btn-danger marks" disabled>x</button>
                   <% end %>
                 <% end %>
@@ -76,7 +76,7 @@
               </button>
               <a class="btn btn-warning btn-lg float-right <%= @request.session[:game].hints.positive? ? '' : 'disabled' %>" role="button" href = '/show_hint'>
                 Show hint!
-                <% unless @request.session[:hints].nil? %>
+                <% if @request.session[:hints] %>
                   <% @request.session[:hints].each do |hint| %>
                   <span class="badge badge-light">
                     <%= hint %>
