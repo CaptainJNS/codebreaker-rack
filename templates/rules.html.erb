@@ -9,7 +9,7 @@
   <link href="assets/css/styles.css" rel="stylesheet">
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
-  <title>Codebreaker Web</title>
+  <title><%= I18n.t(:title) %></title>
 </head>
 
 <body>
@@ -19,29 +19,29 @@
         <div class="col-12 col-md-6">
           <div class="row">
             <div class="col-md-auto">
-              <h1 class="text-white title">Codebreaker 2019 (by <a href = 'https://github.com/CaptainJNS'>CaptainJNS</a>)</h1>
+              <h1 class="text-white title"><%= I18n.t(:codebreaker_2019) %> (by <a href = 'https://github.com/CaptainJNS'>CaptainJNS</a>)</h1>
             </div>
           </div>
-          <p class="lead text-white-70"> Game rules</p>
+          <p class="lead text-white-70"><%= I18n.t(:game_rules) %></p>
           <hr class="mb-4">
           <div class="table-responsive-md scores">
             <ul>
-              <li>Codebreaker is a logic game in which a code-breaker tries to break a secret code created by a code-maker. The codemaker, which will be played by the application we’re going to write, creates a secret code of four numbers between 1 and 6.</li>
-              <li>The codebreaker gets some number of chances to break the code (depends on chosen difficulty). In each turn, the codebreaker makes a guess of 4 numbers. The codemaker then marks the guess with up to 4 signs - + or - or empty spaces.</li>
-              <li>A + indicates an exact match: one of the numbers in the guess is the same as one of the numbers in the secret code and in the same position. For example:<br/>
-                  Secret number - 1234<br/>
-                  Input number - 6264<br/>
-                  Number of pluses - 2 (second and fourth position)</li>
-              <li>A - indicates a number match: one of the numbers in the guess is the same as one of the numbers in the secret code but in a different position. For example:<br/>
-                  Secret number - 1234<br/>Input number - 6462</li>
-              <li>An empty space indicates that there is not a current digit in a secret number.</li>
-              <li>If codebreaker inputs the exact number as a secret number - codebreaker wins the game. If all attempts are spent - codebreaker loses.</li>
-              <li>Codebreaker also has some number of hints(depends on chosen difficulty). If a user takes a hint - he receives back a separate digit of the secret code.</li>
+              <li><%= I18n.t(:rule1) %></li>
+              <li><%= I18n.t(:rule2) %></li>
+              <li><%= I18n.t(:rule3) %><br/>
+                  <%= I18n.t(:rule31) %><br/>
+                  <%= I18n.t(:rule32) %><br/>
+                  <%= I18n.t(:rule33) %></li>
+              <li><%= I18n.t(:rule4) %><br/>
+                  <%= I18n.t(:rule31) %><br/><%= I18n.t(:rule32) %></li>
+              <li><%= I18n.t(:rule5) %></li>
+              <li><%= I18n.t(:rule6) %></li>
+              <li><%= I18n.t(:rule7) %></li>
             </ul>
           </div>
           <hr class="mb-4">
           <a class="btn btn-primary btn-lg" href="/" role="button">
-            Home
+            <%= I18n.t(:home) %>
           </a>
         </div>
        </div>
