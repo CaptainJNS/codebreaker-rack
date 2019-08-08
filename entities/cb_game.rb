@@ -24,6 +24,7 @@ class CBGame
     when '/game' then game
     when '/win' then win
     when '/show_hint' then show_hint
+    when '/test' then Rack::Response.new(render('test.html.erb'))
     else Rack::Response.new('Not Found', 404)
     end
   end
@@ -43,22 +44,11 @@ class CBGame
   end
 
   def start
-    return redirect('game') if @request.session.key?(:game)
-
-    return redirect unless @request.params.key?('player_name')
-
-    start_initialize
-    redirect('game')
+    start_redirect || start_initialize
   end
 
   def game
-    return redirect unless @request.session.key?(:game)
-
-    return redirect('lose') unless @request.session[:game].attempts.positive?
-
-    return redirect('win') if @request.session[:game].win
-
-    Rack::Response.new(render('game.html.erb'))
+    game_redirect || Rack::Response.new(render('game.html.erb'))
   end
 
   def show_hint
@@ -82,19 +72,11 @@ class CBGame
   end
 
   def lose
-    return redirect unless @request.session.key?(:game)
-
-    return redirect('game') if @request.session[:game].attempts.positive?
-
-    Rack::Response.new(render('lose.html.erb'))
+    lose_redirect || Rack::Response.new(render('lose.html.erb'))
   end
 
   def win
-    return redirect unless @request.session.key?(:game)
-
-    return redirect('game') unless @request.session[:game].win
-
-    Rack::Response.new(render('win.html.erb'))
+    win_redirect || Rack::Response.new(render('win.html.erb'))
   end
 
   def render(template)
@@ -123,17 +105,48 @@ class CBGame
   def stats
     return [] unless File.exist?('SEED.yaml')
 
-    table = load.sort_by { |row| [row.hints_total, row.att_used] }
-    table.map { |row| row.difficulty = GameLogic::DIFFICULTY_HASH.key([row.att_total, row.hints_total]) }
-    table
+    load.sort_by { |row| [row.hints_total, row.att_used] }
   end
 
   def start_initialize
-    @request.session.delete(:result)
-    @request.session[:hints] = []
-    @request.session[:save] = false
+    default_setting
     name = @request.params['player_name']
     difficulty = @request.params['level']
     @request.session[:game] = Game.new(name: name, difficulty: difficulty)
+    redirect('game')
+  end
+
+  def default_setting
+    @request.session.merge!(
+      result: nil,
+      hints: [],
+      save: false
+    )
+  end
+
+  def game_redirect
+    return redirect unless @request.session.key?(:game)
+
+    return redirect('lose') unless @request.session[:game].attempts.positive?
+
+    redirect('win') if @request.session[:game].win
+  end
+
+  def start_redirect
+    return redirect('game') if @request.session.key?(:game)
+
+    redirect unless @request.params.key?('player_name')
+  end
+
+  def lose_redirect
+    return redirect unless @request.session.key?(:game)
+
+    redirect('game') if @request.session[:game].attempts.positive?
+  end
+
+  def win_redirect
+    return redirect unless @request.session.key?(:game)
+
+    redirect('game') unless @request.session[:game].win
   end
 end
