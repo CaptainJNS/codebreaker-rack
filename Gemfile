@@ -6,7 +6,7 @@ git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
 # gem 'codebreaker_captainjns', path: "/home/jason/codebreaker_captainjns"
 
-gem 'codebreaker_captainjns', '~> 0.2.1'
+gem 'codebreaker_captainjns', '~> 0.3.1'
 gem 'fasterer', '~> 0.5.1'
 gem 'i18n', '~> 1.6'
 gem 'pry', '~> 0.12.2'

@@ -1,6 +1,6 @@
 require 'i18n'
-require 'codebreaker_captainjns'
 require_relative './entities/config/i18n'
+require 'codebreaker_captainjns'
 require 'rack'
 require_relative 'entities/table_row'
 require_relative 'entities/data_utils'

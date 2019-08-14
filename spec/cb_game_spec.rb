@@ -20,7 +20,7 @@ RSpec.describe CBGame do
       show_hint: '/show_hint' }
   end
 
-  let(:game) { CodebreakerCaptainjns::Game.new(name: 'Tester', difficulty: 'Easy') }
+  let(:game) { CodebreakerCaptainjns::Game.new('username' => 'Tester', 'difficulty' => 'Easy') }
 
   context 'when wrong route' do
     it 'returns status not found' do
@@ -83,7 +83,7 @@ RSpec.describe CBGame do
 
     context 'when received username' do
       before do
-        post urls[:start], player_name: 'Tester', level: 'Easy'
+        post urls[:start], 'username' => 'Tester', 'difficulty' => 'Easy'
       end
 
       it 'sets a session with game' do
@@ -100,7 +100,7 @@ RSpec.describe CBGame do
 
   context 'when play again' do
     it 'deletes game from session' do
-      env('rack.session', game: CodebreakerCaptainjns::Game.new(name: 'Tester', difficulty: 'Easy'))
+      env('rack.session', game: CodebreakerCaptainjns::Game.new('username' => 'Tester', 'difficulty' => 'Easy'))
       get urls[:again]
       expect(last_request.session).not_to include(:game)
     end

@@ -6,6 +6,9 @@ Metrics/LineLength:
 Metrics/MethodLength:
   Max: 16
 
+Metrics/ClassLength:
+  Max: 120
+
 Style/Documentation:
   Enabled: false
 

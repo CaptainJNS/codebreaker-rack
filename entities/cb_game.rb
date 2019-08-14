@@ -24,7 +24,6 @@ class CBGame
     when '/game' then game
     when '/win' then win
     when '/show_hint' then show_hint
-    when '/test' then Rack::Response.new(render('test.html.erb'))
     else Rack::Response.new('Not Found', 404)
     end
   end
@@ -89,8 +88,12 @@ class CBGame
   end
 
   def save_results
+    save(summary)
+  end
+
+  def summary
     att_total, hints_total = @request.session[:game].calc_attempts_and_hints(@request.session[:game].difficulty).first(2)
-    summary = {
+    {
       name: @request.session[:game].name,
       difficulty: @request.session[:game].difficulty,
       att_total: att_total,
@@ -99,7 +102,6 @@ class CBGame
       hints_used: hints_total - @request.session[:game].hints,
       date: Time.now
     }
-    save(summary)
   end
 
   def stats
@@ -110,9 +112,7 @@ class CBGame
 
   def start_initialize
     default_setting
-    name = @request.params['player_name']
-    difficulty = @request.params['level']
-    @request.session[:game] = Game.new(name: name, difficulty: difficulty)
+    @request.session[:game] = Game.new(@request.params.slice('username', 'difficulty'))
     redirect('game')
   end
 
@@ -135,7 +135,7 @@ class CBGame
   def start_redirect
     return redirect('game') if @request.session.key?(:game)
 
-    redirect unless @request.params.key?('player_name')
+    redirect unless @request.params.key?('username')
   end
 
   def lose_redirect
