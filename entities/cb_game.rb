@@ -62,12 +62,10 @@ class CBGame
 
     @request.session[:result] = @request.session[:game].check(@request.params['number'])
 
-    if @request.session[:game].win
-      save_results unless @request.session[:save]
-      return redirect('win')
-    end
+    return redirect('game') unless @request.session[:game].win
 
-    redirect('game')
+    save(summary) unless @request.session[:save]
+    redirect('win')
   end
 
   def lose
@@ -85,10 +83,6 @@ class CBGame
 
   def redirect(address = '')
     Rack::Response.new { |response| response.redirect("/#{address}") }
-  end
-
-  def save_results
-    save(summary)
   end
 
   def summary
