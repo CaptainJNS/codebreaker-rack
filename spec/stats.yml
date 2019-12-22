@@ -1,0 +1,465 @@
+---
+- !ruby/object:TableRow
+  name: Jason
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-06-24 02:20:38.046824916 +03:00
+- !ruby/object:TableRow
+  name: Nikita
+  difficulty: HELL
+  att_total: 3
+  att_used: 2
+  hints_total: 0
+  hints_used: 0
+  date: 2019-06-24 02:21:45.447058385 +03:00
+- !ruby/object:TableRow
+  name: Secret
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-06-24 03:02:05.029665795 +03:00
+- !ruby/object:TableRow
+  name: Jason
+  difficulty: Hard
+  att_total: 5
+  att_used: 3
+  hints_total: 1
+  hints_used: 0
+  date: 2019-06-24 03:05:14.026159444 +03:00
+- !ruby/object:TableRow
+  name: Nikita
+  difficulty: Easy
+  att_total: 15
+  att_used: 2
+  hints_total: 3
+  hints_used: 0
+  date: 2019-06-24 03:06:19.745648543 +03:00
+- !ruby/object:TableRow
+  name: Nikita
+  difficulty: Hard
+  att_total: 5
+  att_used: 4
+  hints_total: 1
+  hints_used: 0
+  date: 2019-06-24 03:06:59.107648162 +03:00
+- !ruby/object:TableRow
+  name: Nikita
+  difficulty: Hard
+  att_total: 5
+  att_used: 2
+  hints_total: 1
+  hints_used: 0
+  date: 2019-06-24 03:07:48.140387712 +03:00
+- !ruby/object:TableRow
+  name: Attempt
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-06-24 12:44:03.085258313 +03:00
+- !ruby/object:TableRow
+  name: Tets
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-06-24 13:44:28.009219122 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-06-24 19:34:07.921467743 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-06-24 19:34:19.353254894 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-06-24 19:36:08.725470037 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-06-24 19:36:52.680178682 +03:00
+- !ruby/object:TableRow
+  name: Hello
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-06-24 19:38:28.629057484 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-06-24 19:39:28.941904527 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-06-24 19:40:53.628234493 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-06-24 19:45:04.681073334 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-06-24 19:54:00.699414744 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-06-24 19:55:09.337995447 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-06-24 21:23:10.416066850 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-06-24 21:24:50.336167093 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-06-24 21:26:29.130042087 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-06-24 21:27:12.126802008 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-06-24 21:30:07.716327414 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-06-24 21:31:32.130328550 +03:00
+- !ruby/object:TableRow
+  name: rspec
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-06-24 21:32:01.939194600 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-06-24 21:34:30.879589374 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-06-24 21:37:30.873152374 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-06-24 21:39:55.352189673 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-06-24 21:40:28.544020235 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-06-24 21:40:54.366508330 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-06-24 21:41:28.630647242 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-06-24 21:42:39.656644469 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-06-25 22:52:00.910208543 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-06-25 23:10:07.664294120 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-06-25 23:11:12.647174110 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-06-25 23:13:14.743619481 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-06-25 23:13:49.679032843 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-06-25 23:15:30.581039729 +03:00
+- !ruby/object:TableRow
+  name: Lol
+  difficulty: Easy
+  att_total: 15
+  att_used: 4
+  hints_total: 3
+  hints_used: 3
+  date: 2019-07-18 23:39:38.330039470 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-07-30 12:58:55.273755946 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-07-30 12:59:46.611652063 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-07-30 13:00:46.185028624 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-07-30 13:04:01.879975116 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-07-30 13:05:27.303391225 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-07-30 13:05:54.834979215 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-07-30 13:09:08.436126202 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-07-30 13:11:30.940513950 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-07-30 13:13:27.622918846 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-07-30 13:13:52.933078102 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-07-30 13:18:14.424406125 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-07-30 13:18:29.125067280 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-07-30 13:20:20.450046883 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-07-30 13:23:45.531851223 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-07-30 13:27:00.961419058 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-07-30 13:29:04.847001261 +03:00
+- !ruby/object:TableRow
+  name: Tester
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 0
+  date: 2019-07-30 13:30:45.220235743 +03:00
+- !ruby/object:TableRow
+  name: Rspec
+  difficulty: Easy
+  att_total: 15
+  att_used: 1
+  hints_total: 3
+  hints_used: 1
+  date: 2019-07-30 13:30:45.328216654 +03:00

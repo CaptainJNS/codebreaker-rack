@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" class="mdl-js">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="assets/favicon.ico" rel="icon">
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/styles.css" rel="stylesheet">
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <title><%= I18n.t(:title) %></title>
+</head>
+
+<body>
+  <section id="introduction">
+    <div class="container">
+      <div class="row fill-viewport align-items-center justify-content-center">
+        <div class="col-12 col-md-6">
+          <div class="row">
+            <div class="col-md-auto">
+              <h1 class="text-white title"><%= I18n.t(:codebreaker_2019) %> (by <a href = 'https://github.com/CaptainJNS'>CaptainJNS</a>)</h1>
+            </div>
+          </div>
+          <p class="lead text-white-70"><%= I18n.t(:top_players) %></p>
+          <hr class="mb-4">
+          <div class="table-responsive-md scores">
+            <table class="table table-striped table table-sm">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col"><%= I18n.t(:name) %></th>
+                  <th scope="col"><%= I18n.t(:level) %></th>
+                  <th scope="col"><%= I18n.t(:attempts_left) %></th>
+                  <th scope="col"><%= I18n.t(:hints_left) %></th>
+                  <th scope="col"><%= I18n.t(:date) %></th>
+                </tr>
+              </thead>
+              <tbody>
+              <% stats.each_with_index do |row, index|%>              
+                <tr>
+                  <th scope="row"><%= index.next %></th>
+                  <td><%= row.name %></td>
+                  <td><%= row.difficulty %></td>
+                  <td><%= row.att_total - row.att_used %>/<%= row.att_total %></td>
+                  <td><%= row.hints_total - row.hints_used %>/<%= row.hints_total %></td>
+                  <td><%= row.date.strftime("%Y.%m.%d - %H:%M:%S") %></td>
+                </tr>              
+              <% end %>
+              </tbody>
+            </table>
+          </div>
+          <hr class="mb-4">
+          <a class="btn btn-primary btn-lg" href="/" role="button">
+            <%= I18n.t(:home) %>
+          </a>
+        </div>
+       </div>
+    </section>
+  </body>
+</html>
